@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 import sys, collections, pprint
 
-infile = open(sys.argv[1], "r")
+if len(sys.argv) < 2:
+    filename = "wordlists/today"
+else:
+    filename = sys.argv[1]
+
+infile = open(filename, "r")
 words = infile.read().splitlines()
 infile.close()
 
