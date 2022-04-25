@@ -13,8 +13,10 @@ infile.close()
 word_lengths = []
 letter_count = {}
 two_letter_list = {}
+word_count = 0
 
 for word in words:
+    word_count += 1
     length = len(word)
     sl = word[:1]
     if sl not in letter_count:
@@ -45,6 +47,8 @@ letter_count_grid = {}
 for sl in letter_count:
     for i in range (word_lengths[0], word_lengths[-1]+1):
         letter_count_grid[sl] = [str(letter_count[sl][i]) if i in letter_count[sl] else "-" for i in word_lengths]
+
+print(f"\nWords found: {word_count}")
 
 print("\nWord lengths:\n")
 print(f"    {'  '.join([str(i) for i in word_lengths])}")
